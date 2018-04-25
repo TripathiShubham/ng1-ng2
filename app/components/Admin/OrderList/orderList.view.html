@@ -1,0 +1,41 @@
+<div style="margin-top:140px;min-height:400px;" class="container">
+    <div class="item-list">
+        <div class="service-info">
+            <h3 style="margin-bottom:30px">Customer Orders</h3>
+            <div class="row" data-ng-repeat="item in OrderListCtrl.itemList track by $index">
+                <div class="col-md-1">
+                    <i class="material-icons">
+                        keyboard_arrow_right</i>
+                </div>
+                <div class="col-md-6" data-ng-click="OrderListCtrl.viewOrderDetail(item)">
+                    <p class="margin-b-5">
+                        {{item.name}}
+                    </p>
+                </div>
+                <div class="col-md-1 remove" data-ng-click="OrderListCtrl.completeOrder(item._id, $index)">
+                    <i class="material-icons">done_all</i>
+                </div>
+            </div>
+            <div data-ng-if="OrderListCtrl.itemList.length === 0">
+                <p class="margin-b-5">
+                    No new order
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var handleHeaderOnScroll = function () {
+        if ($(window).scrollTop() > 60) {
+            $('body').addClass('page-on-scroll');
+        } else {
+            $('body').addClass('page-on-scroll');
+        }
+    }
+
+    $(window).scroll(function () {
+        handleHeaderOnScroll();
+    });
+    $('body').addClass('page-on-scroll');
+</script>

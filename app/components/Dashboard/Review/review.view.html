@@ -1,0 +1,46 @@
+<div style="margin-top:140px;min-height:400px;" class="container">
+        <div class="item-list">
+            <div class="service-info">
+                <h3 style="margin-bottom:30px">Review Order</h3>
+                <div class="row" data-ng-repeat="item in ReviewCtrl.itemList track by $index">
+                    <div class="col-md-1">
+                        <i class="material-icons">keyboard_arrow_right</i>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="margin-b-5">
+                            {{item}}
+                        </p>
+                    </div>
+                    <div class="col-md-1 remove">
+                        <i class="material-icons pull-right"
+                            data-ng-click="ReviewCtrl.removeItem($index)">delete</i>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:30px" 
+                    data-ng-if="ReviewCtrl.itemList.length != 0">
+                    <button type="button" class="c-button" data-ng-click="ReviewCtrl.placeOrder()">
+                        Continue</button>
+                </div>
+                <div data-ng-if="ReviewCtrl.itemList.length === 0">
+                    <p class="margin-b-5">
+                        Add some item to your cart
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var handleHeaderOnScroll = function () {
+            if ($(window).scrollTop() > 60) {
+                $('body').addClass('page-on-scroll');
+            } else {
+                $('body').addClass('page-on-scroll');
+            }
+        }
+    
+        $(window).scroll(function () {
+            handleHeaderOnScroll();
+        });
+        $('body').addClass('page-on-scroll');
+    </script>

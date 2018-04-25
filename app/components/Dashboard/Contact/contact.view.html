@@ -1,0 +1,52 @@
+<div style="margin-top:140px;min-height:500px;" class="container">
+    <div class="item-list">
+        <div class="row row-space-1">
+            <div class="col-sm-6 sm-margin-b-2">
+                    <div class="service" data-height="height">
+                        <div class="service-element">
+                            <i class="service-icon icon-bag"></i>
+                        </div>
+                        <div class="service-info">
+                            <h3>Order Online</h3>
+                            <p class="margin-b-5">
+                                You can do order right here from our website
+                            </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-sm-6 sm-margin-b-2">
+                    <div class="service" data-height="height">
+                        <div class="service-element">
+                            <i class="service-icon icon-call-out"></i>
+                        </div>
+                        <div class="service-info">
+                            <h3>Call/WhatsApp Us</h3>
+                            <p class="margin-b-5">
+                                Please send your query us at <strong>+918173868129</strong> or <strong>+919795245088</strong>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="map" class="map height-400"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    var handleHeaderOnScroll = function () {
+        if ($(window).scrollTop() > 60) {
+            $('body').addClass('page-on-scroll');
+        } else {
+            $('body').addClass('page-on-scroll');
+        }
+    }
+
+    $(window).scroll(function () {
+        handleHeaderOnScroll();
+    });
+    $('body').addClass('page-on-scroll');
+    window.initMap();
+</script>

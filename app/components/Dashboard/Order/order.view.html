@@ -1,0 +1,64 @@
+<div style="margin-top:140px;min-height:400px;" class="container">
+    <div class="container row">
+        <h3>Place your order</h3>
+    </div>
+    <form name="itemForm" data-ng-submit="OrderCtrl.addItem()" novalidate>
+        <div class="row">
+            <div class="col-md-8" style="margin-bottom: 10px;">
+                <input class="sm-form-control" data-ng-model="OrderCtrl.inputItem" placeholder="Add item" name="item" autocomplete="off"
+                    required>
+                <p data-ng-show="itemForm.item.$touched && itemForm.item.$invalid" style="margin-top: 10px;">
+                    Please add some item
+                </p>
+            </div>
+            <div class="col-md-4">
+                <button type="submit" ng-disabled="itemForm.$invalid" class="c-button">Add</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="item-list">
+        <div class="service-info">
+            <h3 style="margin-bottom:30px">Item's List</h3>
+            <div class="row" data-ng-repeat="item in OrderCtrl.itemList track by $index">
+                <div class="col-md-1">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </div>
+                <div class="col-md-6">
+                    <p class="margin-b-5">
+                        {{item}}
+                    </p>
+                </div>
+                <div class="col-md-1 remove">
+                    <i class="material-icons pull-right" style="cursor: pointer;"
+                        data-ng-click="OrderCtrl.removeItem($index)">delete</i>
+                </div>
+            </div>
+            <div class="row" style="margin-top:30px" 
+                data-ng-if="OrderCtrl.itemList.length != 0">
+                <button type="button" class="c-button" data-ng-click="OrderCtrl.placeOrder()">
+                    Place Order</button>
+            </div>
+            <div data-ng-if="OrderCtrl.itemList.length === 0">
+                <p class="margin-b-5">
+                    Empty List
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var handleHeaderOnScroll = function () {
+        if ($(window).scrollTop() > 60) {
+            $('body').addClass('page-on-scroll');
+        } else {
+            $('body').addClass('page-on-scroll');
+        }
+    }
+
+    $(window).scroll(function () {
+        handleHeaderOnScroll();
+    });
+    $('body').addClass('page-on-scroll');
+</script>

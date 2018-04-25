@@ -1,0 +1,96 @@
+<div style="margin-top:140px;min-height:400px;" class="container">
+    <div class="container row">
+        <h3>Add Your Details</h3>
+    </div>
+    <form name="itemForm" data-ng-submit="SubmitCtrl.addItem()" novalidate>
+        <div class="row">
+            <div style="margin-bottom: 10px;">
+                <div class="col-md-4 form-group">
+                    <input class="sm-form-control" data-ng-model="SubmitCtrl.user.name" placeholder="Full Name" name="name" autocomplete="off"
+                        required>
+                    <p data-ng-show="itemForm.name.$touched && itemForm.name.$invalid" style="margin-top: 10px;">
+                        Name is required
+                    </p>
+                </div>
+                <div class="col-md-4 form-group">
+                    <input class="sm-form-control" type="number" data-ng-model="SubmitCtrl.user.contact" placeholder="Contact" name="contact" autocomplete="off"
+                        required>
+                    <p data-ng-show="itemForm.contact.$touched && itemForm.contact.$invalid" style="margin-top: 10px;">Contact is required
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <input class="sm-form-control" type="number" data-ng-model="SubmitCtrl.user.pin" placeholder="PIN Code" 
+                name="pin" autocomplete="off" required>
+                <p data-ng-show="itemForm.pin.$touched && itemForm.pin.$invalid" style="margin-top: 10px;">
+                    PIN is required
+                </p>
+            </div>
+            <div class="col-md-4 form-group">
+                <input class="sm-form-control" data-ng-model="SubmitCtrl.user.location" placeholder="Location" name="location" autocomplete="off"
+                    required>
+                <p data-ng-show="itemForm.location.$touched && itemForm.location.$invalid" 
+                    style="margin-top: 10px;">Location is required
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 form-group">
+                <input class="sm-form-control" data-ng-model="SubmitCtrl.user.address" placeholder="Address" 
+                name="address" autocomplete="off"
+                    required>
+                <p data-ng-show="itemForm.address.$touched && itemForm.address.$invalid" style="margin-top: 10px;">
+                    Address is required
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <input class="sm-form-control" data-ng-model="SubmitCtrl.user.city" placeholder="City" 
+                name="city" autocomplete="off" required>
+                <p data-ng-show="itemForm.city.$touched && itemForm.city.$invalid" style="margin-top: 10px;">City is required
+                </p>
+            </div>
+            <div class="col-md-4 form-group">
+                <input class="sm-form-control" data-ng-model="SubmitCtrl.user.state" placeholder="State" 
+                name="state" autocomplete="off"
+                    required>
+                <p data-ng-show="itemForm.state.$touched && itemForm.state.$invalid" style="margin-top: 10px;">State is required
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <input class="sm-form-control" data-ng-model="SubmitCtrl.user.landmark" placeholder="Landmark" 
+                autocomplete="off">
+            </div>
+            <div class="col-md-4 form-group">
+                <input class="sm-form-control" type="number" data-ng-model="SubmitCtrl.user.alt_contact" 
+                placeholder="Alternative Contact" autocomplete="off">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:30px">
+            <div class="col-md-4">
+                <button type="submit" ng-disabled="itemForm.$invalid" class="c-button"
+                    >Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    var handleHeaderOnScroll = function () {
+        if ($(window).scrollTop() > 60) {
+            $('body').addClass('page-on-scroll');
+        } else {
+            $('body').addClass('page-on-scroll');
+        }
+    }
+
+    $(window).scroll(function () {
+        handleHeaderOnScroll();
+    });
+    $('body').addClass('page-on-scroll');
+</script>

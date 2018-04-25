@@ -1,0 +1,43 @@
+<div style="margin-top:140px;min-height:400px;" class="container">
+    <div class="item-list">
+        <div class="service-info">
+            <h3 style="margin-bottom:30px">{{OrderDetailCtrl.item.name}}
+                <i class="material-icons pull-right" data-ng-click="OrderDetailCtrl.completeOrder()"
+                    >done_all</i>
+            </h3>
+            <p class="margin-b-5" style="margin-bottom:40px !important">
+                {{OrderDetailCtrl.item.address}}  {{OrderDetailCtrl.item.location}}, {{OrderDetailCtrl.item.city}},
+                 {{OrderDetailCtrl.item.state}}<br>
+                 {{OrderDetailCtrl.item.landmark}}  PIN - {{OrderDetailCtrl.item.pin}}<br>
+                 <strong>Contact: </strong>{{OrderDetailCtrl.item.contact}}<br>
+                 <strong>Alt-Contact: </strong>{{OrderDetailCtrl.item.alt_contact}}<br>
+                 <strong>Ordered On : </strong>{{OrderDetailCtrl.item.cot | date: 'dd:MMM:yyyy hh:mm a'}}
+            </p>
+            <div class="row" data-ng-repeat="item in OrderDetailCtrl.itemList.list track by $index">
+                <div class="col-md-1">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </div>
+                <div class="col-md-6">
+                    <p class="margin-b-5">
+                        {{item}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var handleHeaderOnScroll = function () {
+        if ($(window).scrollTop() > 60) {
+            $('body').addClass('page-on-scroll');
+        } else {
+            $('body').addClass('page-on-scroll');
+        }
+    }
+
+    $(window).scroll(function () {
+        handleHeaderOnScroll();
+    });
+    $('body').addClass('page-on-scroll');
+</script>

@@ -1,0 +1,44 @@
+<div style="margin-top:140px;min-height:400px;" class="container">
+    <div class="container row">
+        <h3>Login</h3>
+    </div>
+    <form name="itemForm" data-ng-submit="LoginCtrl.login()" novalidate>
+        <div class="row">
+            <div class="col-md-4" style="margin-bottom: 10px;">
+                <input class="sm-form-control" data-ng-model="LoginCtrl.user.email" placeholder="Email/Username" 
+                name="email" autocomplete="off"
+                    required>
+                <p data-ng-show="itemForm.email.$touched && itemForm.email.$invalid" style="margin-top: 10px;">
+                    Email/Username is required
+                </p>
+            </div>
+            <div class="col-md-4" style="margin-bottom: 10px;">
+                    <input class="sm-form-control" type="password" data-ng-model="LoginCtrl.user.password" placeholder="Add item" 
+                    name="password" autocomplete="off"
+                        required>
+                    <p data-ng-show="itemForm.password.$touched && itemForm.password.$invalid" style="margin-top: 10px;">
+                        Password is required
+                    </p>
+                </div>
+            <div class="col-md-4">
+                <button type="submit" ng-disabled="itemForm.$invalid"
+                    class="c-button">Login</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    var handleHeaderOnScroll = function () {
+        if ($(window).scrollTop() > 60) {
+            $('body').addClass('page-on-scroll');
+        } else {
+            $('body').addClass('page-on-scroll');
+        }
+    }
+
+    $(window).scroll(function () {
+        handleHeaderOnScroll();
+    });
+    $('body').addClass('page-on-scroll');
+</script>

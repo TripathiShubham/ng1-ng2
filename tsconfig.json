@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "removeComments": false
+    },
+    // "angularCompilerOptions": {
+    //     "entryModule": "src/index#AppModule"
+    // },
+    "extensions": [".ts", ".js"],
+    "alias": {
+      "@angular/upgrade/static": "@angular/upgrade/bundles/upgrade-static.umd.js"
+    },
+    "typeRoots": [
+        "node_modules/@types"
+      ],
+      "lib": [
+        "es2017",
+        "dom"
+      ],
+      "exclude": [
+        "node_modules"
+    ]
+
+}
